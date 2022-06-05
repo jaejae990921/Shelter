@@ -170,8 +170,8 @@
 		// 지도를 생성한다
 		const map = new kakao.maps.Map(mapContainer, mapOption);
 
-		var makers = []; // 마커 배열
-
+		var markers = []; // 마커 배열
+				
 		// 지도에 마커와 인포윈도우를 표시하는 함수입니다
 		function displayMarker(locPosition, message) {
 			// 마커를 생성합니다
@@ -285,7 +285,7 @@
 	</div>
 	<script>
 		function btn() {
-			for (var i=0; i < markers.length; i++) {
+			for (var i = 0; i < markers.length; i++) {
 				makers[i].setMap(null);
 			}
 		}
