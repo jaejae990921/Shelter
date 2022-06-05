@@ -256,7 +256,7 @@
 				// 인포윈도우를 마커위에 표시합니다
 				//infowindow.open(map, marker);
 				marker.setMap(map);
-
+				markers.push(marker);
 				console.log(marker);
 
 				// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
@@ -285,7 +285,9 @@
 	</div>
 	<script>
 		function btn() {
-			console.log("버튼 누름");
+			for (var i=0; i < markers.length; i++) {
+				maker.setMap(null);
+			}
 		}
 	</script>
 </body>
