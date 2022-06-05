@@ -224,6 +224,8 @@
 			return res.text();
 		};
 
+		var makers = []; // 마커 배열
+
 		const init = async () => {
 			const db = JSON.parse(await getData());
 			// HTML5의 geolocation으로 사용할 수 있는지 확인합니다
@@ -254,6 +256,7 @@
 				// 인포윈도우를 마커위에 표시합니다
 				//infowindow.open(map, marker);
 				marker.setMap(map);
+
 				console.log(marker);
 
 				// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
@@ -274,16 +277,13 @@
 		};
 
 		init();
-	</script>
 
-	<div class="container">
-		<div class="btn" onclick="btn()"> 가까운 대피소 찾기
-			<!-- <span>가까운 대피소 찾기</span> -->
-			<div class="dot"></div>
+		<div class="container">
+			<div class="btn" onclick="btn()"> 가까운 대피소 찾기
+				<div class="dot"></div>
+			</div>
 		</div>
-	</div>
 
-	<script>
 		function btn() {
 			console.log("버튼 누름");
 		}
