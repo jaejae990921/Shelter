@@ -289,6 +289,10 @@
 	<script>
 		function btn() { // 버튼 누르면 가장 가까운 대피소만 지움
 			// 기존 마커 및 오버레이 지우기
+			for (var k = 0; k < markers.length; k++) {
+				console.log(markers[k].REFINE_WGS84_LAT, markers[k].REFINE_WGS84_LOGT);
+			}
+			
 			for (var i = 0; i < markers.length; i++) {
 				markers[i].setMap(null);
 			}
@@ -301,10 +305,7 @@
 					lon = position.coords.longitude; // 경도
 				console.log(lat, lon);
 			});
-			for (var k = 0; k < markers.length; k++) {
-				console.log(markers[k].REFINE_WGS84_LAT, markers[k].REFINE_WGS84_LOGT);
 
-			}
 		}
 	</script>
 </body>
