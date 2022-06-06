@@ -327,19 +327,24 @@
 						console.log(near);
 						console.log(near[0], near[1], near[2], near[3]);
 					}
-					// else {
-					// 	if (near[0] < getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)) {
-					// 		console.log("최소값보다큼");
-					// 	}
-					// 	else {
-					// 		var distance = getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
-					// 		near.push(distance, shelter[k].FACLT_NM_BULDNG_NM_INFO, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
-					// 	}
-					// }
+					else {
+					 	if (near[0] < getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)) {
+
+					 	}
+					 	else {
+					 		var distance = getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
+					 		near.pop();
+							near.pop();
+							near.pop();
+							near.pop();
+							near.push(distance, shelter[k].FACLT_NM_BULDNG_NM_INFO, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
+					 	}
+					}
 					console.log("대피소와의 거리는 : ", getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT))
 				}
 			});
-			//console.log(near);
+			console.log(near);
+			console.log(near[0], near[1], near[2], near[3]);
 		}
 	</script>
 </body>
