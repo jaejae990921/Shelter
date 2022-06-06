@@ -332,7 +332,7 @@
 					else {
 						near = []; // 배열 초기화
 						var distance = getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
-						near[0].push(distance, shelter[k].FACLT_NM_BULDNG_NM_INFO, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
+						near.push(distance, shelter[k].FACLT_NM_BULDNG_NM_INFO, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
 
 					}
 				}
