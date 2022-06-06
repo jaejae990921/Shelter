@@ -302,15 +302,6 @@
 				var lat = position.coords.latitude, // 위도
 					lon = position.coords.longitude; // 경도
 				console.log(lat, lon);
-
-				db.data.forEach((item, i) => {
-					const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
-
-					db.data.forEach((item, i) => {
-						const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
-						console.log(item);
-					});
-				});
 			});
 		}
 	</script>
