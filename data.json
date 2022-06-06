@@ -1,6 +1,21 @@
 {
     "data": [
         {
+            "FACLT_NM_BULDNG_NM_INFO": "동부아파트",
+            "REFINE_WGS84_LAT": "37.0815857715",
+            "REFINE_WGS84_LOGT": "127.0637432940"
+        },
+        {
+            "FACLT_NM_BULDNG_NM_INFO": "동부아파트",
+            "REFINE_WGS84_LAT": "37.0815857715",
+            "REFINE_WGS84_LOGT": "127.0637432940"
+        },
+        {
+            "FACLT_NM_BULDNG_NM_INFO": "동부아파트",
+            "REFINE_WGS84_LAT": "37.0815857715",
+            "REFINE_WGS84_LOGT": "127.0637432940"
+        },
+        {
             "MANAGE_ID": "3910000-S199500013",
             "LICENSG_DE": "19950105",
             "LICENSG_CANCL_DE": "",
