@@ -343,6 +343,26 @@
 					console.log("대피소와의 거리는 : ", getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT))
 				}
 				console.log("가장 가까운 대피소와의 거리는" ,near[0], "이고, 이름은 ", near[1], "입니다. 위도 경도는 각각 ",near[2], near[3]);
+
+				const marker = new kakao.maps.Marker({
+					map : map,
+					position : new kakao.maps.LatLng(near[2], near[3]),
+					image : markerImage,
+				})
+				marker.setMap(map);
+
+				const temp_html = `<div class="customoverlay">
+                        <a href="https://map.kakao.com/link/map/${near[1]},${near[2]},${near[3]}"" target="_blank">
+                            <span class="title">${near[1]}</span>
+                        </a></div>`;
+
+				// 커스텀 오버레이를 생성합니다
+				const overlay = new kakao.maps.CustomOverlay({
+					map: map,
+					position: new kakao.maps.LatLng(near[2], near[3]),
+					content: temp_html,
+					yAnchor: 1,
+				});
 			});
 		}
 	</script>
