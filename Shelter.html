@@ -320,26 +320,25 @@
 					lon = position.coords.longitude; // 경도
 				// console.log(lat, lon); // 현재 내 위치 출력
 
-			for (var k = 0; k < shelter.length; k++) { // 쉘터 배열에 위도 경도 출력
-				if (near.length == 0) {
-					var distance = getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
-					near.push(distance, shelter[k].FACLT_NM_BULDNG_NM_INFO, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
-				}
-				else {
-					if (near[0] < getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)) {
-
-					}
-					else {
-						near = []; // 배열 초기화
+				for (var k = 0; k < shelter.length; k++) { // 쉘터 배열에 위도 경도 출력
+					if (near.length == 0) {
 						var distance = getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
 						near.push(distance, shelter[k].FACLT_NM_BULDNG_NM_INFO, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
-
 					}
+					else {
+						if (near[0] < getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)) {
+							console.log("최소값보다큼");
+						}
+						else {
+							near = []; // 배열 초기화
+							var distance = getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
+							near.push(distance, shelter[k].FACLT_NM_BULDNG_NM_INFO, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
+						}
+					}
+					console.log("대피소와의 거리는 : ", getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT))
 				}
-				console.log("대피소와의 거리는 : ", getDistanceFromLatLonInKm(lat, lon, shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT))
-			}
-		});
-			console.log(near[0], near[1], near[2], near[3]);
+			});
+			console.log(near);
 		}
 	</script>
 </body>
