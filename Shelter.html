@@ -303,7 +303,11 @@
 
 				db.data.forEach((item, i) => {
 					const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
-					console.log(item);
+					const db = JSON.parse(await getData());
+					db.data.forEach((item, i) => {
+						const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
+						console.log(item);
+					});
 				});
 			});
 		}
