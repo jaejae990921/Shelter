@@ -172,7 +172,7 @@
 
 		var markers = []; // 마커 배열
 		var overlays = []; // 오버레이 배열
-		var near = []; // 가까운 대피소 구별할 배열
+		var shelter = []; // 가까운 대피소 구별할 배열
 
 		// 지도에 마커와 인포윈도우를 표시하는 함수입니다
 		function displayMarker(locPosition, message) {
@@ -260,6 +260,7 @@
 				marker.setMap(map);
 				markers.push(marker);
 				console.log(item);
+				shelter.push(item);
 
 				// 커스텀 오버레이에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
 				const temp_html = `<div class="customoverlay">
@@ -301,7 +302,9 @@
 					lon = position.coords.longitude; // 경도
 				console.log(lat, lon);
 			});
-
+			for (var k = 0; k < shelter.length; k++) {
+				console.log(shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
+			}
 		}
 	</script>
 </body>
