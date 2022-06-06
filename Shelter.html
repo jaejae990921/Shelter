@@ -301,14 +301,24 @@
 					lon = position.coords.longitude; // 경도
 				console.log(lat, lon);
 
-				// db.data.forEach((item, i) => {
-				// 	const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
-				// 	const db = JSON.parse(await getData());
-				// 	db.data.forEach((item, i) => {
-				// 		const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
-				// 		console.log(item);
-				// 	});
-				// });
+
+
+
+				const base_url = "./data.json";
+				const getData = async () => {
+					const res = await fetch(base_url);
+					return res.text();
+				};
+				const db = JSON.parse(await getData());
+
+				db.data.forEach((item, i) => {
+					const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
+
+					db.data.forEach((item, i) => {
+						const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
+						console.log(item);
+					});
+				});
 			});
 		}
 	</script>
