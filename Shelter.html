@@ -171,7 +171,8 @@
 		const map = new kakao.maps.Map(mapContainer, mapOption);
 
 		var markers = []; // 마커 배열
-		var overlays = [];
+		var overlays = []; // 오버레이 배열
+		var near = []; // 가까운 대피소 구별할 배열
 
 		// 지도에 마커와 인포윈도우를 표시하는 함수입니다
 		function displayMarker(locPosition, message) {
@@ -299,8 +300,12 @@
 				var lat = position.coords.latitude, // 위도
 					lon = position.coords.longitude; // 경도
 				console.log(lat, lon);
-			});
-		}
+
+				db.data.forEach((item, i) => {
+					const { FACLT_NM_BULDNG_NM_INFO, REFINE_WGS84_LAT, REFINE_WGS84_LOGT } = item;
+					console.log(item);
+				});
+			}
 	</script>
 </body>
 
