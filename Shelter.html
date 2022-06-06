@@ -296,13 +296,14 @@
 			for (var j = 0; j < overlays.length; j++) {
 				overlays[j].setMap(null);
 			}
+
 			navigator.geolocation.getCurrentPosition(function (position) {
 
 				var lat = position.coords.latitude, // 위도
 					lon = position.coords.longitude; // 경도
-				console.log(lat, lon);
+				console.log(lat, lon); // 현재 내 위치 출력
 			});
-			for (var k = 0; k < shelter.length; k++) {
+			for (var k = 0; k < shelter.length; k++) { // 쉘터 배열에 위도 경도 출력
 				console.log(shelter[k].REFINE_WGS84_LAT, shelter[k].REFINE_WGS84_LOGT)
 			}
 		}
